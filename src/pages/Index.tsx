@@ -14,8 +14,8 @@ const Index = () => {
   };
 
   return (
-    <main className="min-h-screen w-full bg-recovery-surface">
-      <div className="mx-auto w-full max-w-xl">
+    <main className="min-h-screen w-full bg-recovery-gradient flex items-stretch justify-center">
+      <div className="mx-auto w-full max-w-xl shadow-2xl">
         {screen === "intro" && (
           <IntroScreen onBegin={() => setScreen("cards")} onBack={handleExit} />
         )}
