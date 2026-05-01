@@ -53,6 +53,16 @@ All colors MUST be HSL.
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Recovery activity tokens */
+    --recovery-blue-start: 214 36% 47%;   /* #4a6fa5 */
+    --recovery-blue-end: 214 36% 68%;     /* #8faacc */
+    --recovery-bg: 214 38% 97%;           /* #f7f9fc */
+    --recovery-card-border: 214 50% 94%;  /* #eaf0f8 */
+
+    --gradient-recovery: linear-gradient(135deg, hsl(var(--recovery-blue-start)), hsl(var(--recovery-blue-end)));
+    --shadow-recovery-card: 0 10px 30px -12px hsl(var(--recovery-blue-start) / 0.18);
+    --shadow-recovery-button: 0 6px 16px -6px hsl(var(--recovery-blue-start) / 0.35);
   }
 
   .dark {
@@ -101,5 +111,27 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+}
+
+@layer utilities {
+  .bg-recovery-gradient {
+    background-image: var(--gradient-recovery);
+  }
+  .text-soft-white {
+    color: hsl(0 0% 100% / 0.85);
+  }
+  .shadow-recovery-card {
+    box-shadow: var(--shadow-recovery-card);
+  }
+  .shadow-recovery-button {
+    box-shadow: var(--shadow-recovery-button);
+  }
+  .bg-recovery-surface {
+    background-color: hsl(var(--recovery-bg));
+  }
+  .border-recovery-card {
+    border-color: hsl(var(--recovery-card-border));
   }
 }
